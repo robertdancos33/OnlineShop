@@ -1,0 +1,85 @@
+/* Fundal */
+body {
+    background: linear-gradient(120deg, #eef2f3, #038af6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Lato", Arial, sans-serif;
+    color: #333;
+}
+
+/* Container de login și autentificare */
+.login-container, .auth-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+    color: #333;
+}
+
+/* Titlu */
+.login-container h2, .auth-container h2 {
+    font-size: 1.8em;
+    color: #52616b;
+    margin-bottom: 25px;
+}
+
+/* Câmpuri de input */
+.login-container input[type="text"],
+.login-container input[type="password"],
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    background: #f5f5f5;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efect la focus */
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus,
+.auth-container input[type="text"]:focus,
+.auth-container input[type="password"]:focus {
+    border-color: #8e9eab;
+    box-shadow: 0 0 8px rgba(142, 158, 171, 0.4);
+}
+
+/* Buton de login și autentificare */
+.login-container button,
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #8e9eab;
+    border: none;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.login-container button:hover,
+.auth-container button:hover {
+    background: #5d6d7e;
+}
+
+/* Efect subtil pe hover */
+.login-container button:focus,
+.login-container button:hover,
+.auth-container button:focus,
+.auth-container button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(93, 109, 126, 0.3);
+}
