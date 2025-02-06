@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  fitness-shop-mysql:
+    image: mysql:5.7
+    container_name: fitness-shop-mysql.dev
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fitnessshopdb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - "3306:3306"
+    networks:
+      - fitness-shop-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  fitness-shop:
+    image: robert/fitness-shop:1.0-SNAPSHOT
+    container_name: fitness-shop.dev
+    depends_on:
+      - fitness-shop-mysql
+    ports:
+      - "8888:8080"
+    networks:
+      - fitness-shop-network
+    environment:
+      DB_HOST: fitness-shop-mysql
+      DB_PORT: 3306
+      DB_NAME: fitnessshopdb
+      DB_USER: admin
+      DB_PASSWORD: admin
+
+networks:
+  fitness-shop-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
